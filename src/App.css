@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+label {
+  margin-bottom: 10px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgb(195, 255, 250);
+  --todo-color: rgb(0, 139, 163);
+  --button-border: 3px solid rgb(75, 75, 75);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-title {
+  align-self: center;
+  margin-bottom: -40px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid var(--todo-color);
+  width: fit-content;
+  background-color: white;
+  z-index: 1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-area {
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-width: 300px;
+}
+.add-form {
+  padding: 30px;
+  padding-bottom: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--todo-color);
+}
+.remove-button {
+  border-style: none;
+  align-self: flex-end;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(236, 60, 60);
   color: white;
+  font-size: 1.2em;
+  transition: all 0.2s ease-in;
+  border-bottom: var(--button-border);
 }
-
-.App-link {
-  color: #61dafb;
+.remove-button:hover {
+  background: rgb(243, 104, 104);
+  border-bottom: 3px solid rgb(194, 75, 75);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit-button {
+  align-self: flex-end;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(64, 139, 68);
+  color: white;
+  border-radius: 5px;
+  font-size: 1.2em;
+  border-style: none;
+  transition: all 0.2s ease-in;
+  border-bottom: var(--button-border);
+}
+.submit-button:hover {
+  background: rgb(98, 201, 120);
+  border-bottom: 3px solid rgb(114, 114, 114);
+}
+.card-title {
+  padding: 10px;
+  word-break: break-all;
+}
+.card-desc {
+  padding: 10px;
+  word-break: break-all;
+}
+.text-input {
+  margin-bottom: 10px;
+}
+.todo-card {
+  margin: 20px;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.done {
+  background-color: rgb(177, 177, 177);
+}
+.pending {
+  background-color: rgb(22, 235, 189);
+}
+.done > .card-title,
+.done > .card-desc {
+  text-decoration: line-through;
+  font-style: italic;
+  color: gray;
 }
