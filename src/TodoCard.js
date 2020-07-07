@@ -1,6 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const TodoCard = props => {
+  TodoCard.propTypes = {
+    status: PropTypes.string.isRequired,
+    info: PropTypes.array.isRequired,
+    remove: PropTypes.func.isRequired,
+    toggle: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired
+  };
   const { status, info, remove, toggle, id } = props;
   const button =
     status === 'done' ? (

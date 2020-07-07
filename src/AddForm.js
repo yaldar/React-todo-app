@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class AddForm extends Component {
   constructor(props) {
     super(props);
     this.state = { titleField: null, descField: null };
   }
-  handleChange = event => {
+  handleChange(event) {
     this.setState({ [event.target.id]: event.target.value });
-  };
-  handleSubmit = event => {
+  }
+  handleSubmit(event) {
+    AddForm.propTypes = {
+      add: PropTypes.func.isRequired,
+    };
+
     this.props.add(this.state.titleField, this.state.descField);
     document.querySelector('.add-form').reset();
     this.setState({ titleField: null, descField: null });
     event.preventDefault();
-  };
+  }
   render() {
     return (
       <form className='add-form' onSubmit={this.handleSubmit}>

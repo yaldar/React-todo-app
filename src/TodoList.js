@@ -1,7 +1,14 @@
 import React from 'react';
 import TodoCard from './TodoCard';
+import PropTypes from 'prop-types';
 
 const TodoList = props => {
+  TodoList.propTypes = {
+    todos: PropTypes.array.isRequired,
+    toggle: PropTypes.func.isRequired,
+    remove: PropTypes.func.isRequired,
+  };
+
   const { todos, toggle, remove } = props;
   const pendingCards = todos.pending.map((el, index) => (
     <TodoCard
