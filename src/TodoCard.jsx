@@ -1,14 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const TodoCard = (props) => {
-  TodoCard.propTypes = {
-    status: PropTypes.string.isRequired,
-    info: PropTypes.object.isRequired,
-    remove: PropTypes.func.isRequired,
-    toggle: PropTypes.func.isRequired,
-    id: PropTypes.number.isRequired,
-  };
   const {
     status, info, remove, toggle, id,
   } = props;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class AddForm extends Component {
   constructor(props) {
@@ -14,10 +13,6 @@ class AddForm extends Component {
   }
 
   handleSubmit(event) {
-    AddForm.propTypes = {
-      add: PropTypes.func.isRequired,
-    };
-    
     this.props.add(this.state.titleField, this.state.descField);
     document.querySelector('.add-form').reset();
     this.setState({ titleField: null, descField: null });
